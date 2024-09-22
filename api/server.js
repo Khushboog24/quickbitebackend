@@ -19,6 +19,12 @@ app.use(cors());
 initializePassport(app);
 
 app.use("/api/restaurants", restraurantRoutes);
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'your_random_secret_key', // You can replace 'your_random_secret_key' with a secure key or use an environment variable.
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: true }}));
+
 app.use("/auth", authRoutes);
 app.use("/api/menus", menuRoutes);
 
