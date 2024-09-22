@@ -18,7 +18,7 @@ const initializePassport = (app) => {
 
   app.use(passport.initialize());
   app.use(passport.session());
-
+  console.log("env passportsessionquickbit",!!env.GOOGLE_CLIENT_ID, !!process.env.GOOGLE_CLIENT_ID);
   passport.use(
     new GoogleStrategy(
       {
