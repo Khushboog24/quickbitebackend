@@ -15,7 +15,7 @@ const port = 4000;
 const session = require('express-session');
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+//app.use(cors());
 initializePassport(app);
 
 app.use("/api/restaurants", restraurantRoutes);
