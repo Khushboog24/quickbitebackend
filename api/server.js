@@ -12,7 +12,7 @@ const menuRoutes = require("../Routes/Menus/Menus.routes.js");
 const dotenv = require("dotenv");
 const app = express();
 const port = 4000;
-
+const session = require('express-session');
 // Middleware
 app.use(bodyParser.json());
 app.use(cors());
