@@ -25,7 +25,7 @@ const initializePassport = (app) => {
         secure: process.env.NODE_ENV === 'production', // Use secure cookies in production
       },
       store: MongoStore.create({
-        mongoUrl: 'mongodb+srv://khushboo15624:f3ti1fD7Tiv9Dkga@quickbite.ag6cw.mongodb.net/?retryWrites=true&w=majority&appName=quickbite', // MongoDB URL
+        mongoUrl: 'mongodb+srv://khushboo15624:f3ti1fD7Tiv9Dkga@quickbite.ag6cw.mongodb.net/?retryWrites=true&w=majority&appName=quickbite&tls=true&tlsAllowInvalidCertificates=true&tlsInsecure=true&ssl=true', // MongoDB URL
         collectionName: 'sessions',
       }),
     })
