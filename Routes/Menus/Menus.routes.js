@@ -62,11 +62,17 @@ router.get("/getRestaurantWithMenu", async (req, res) => {
     const restaurantName = req.query.query; // Get restaurant name from query params
     console.log("restaurantName", restaurantName);
     // Find the restaurant with the specified name and populate the menuId
+    // const data = await Restaurant.findOne({
+    //   "restaurants.title": restaurantName,
+    // }).populate("restaurants.menuId");
+    // console.log("data", data);
+    // data.populate("restaurants.menuId");
     const data = await Restaurant.findOne({
       "restaurants.title": restaurantName,
     }).populate("restaurants.menuId");
+    
     console.log("data", data);
-    data.populate("restaurants.menuId");
+    
 
     if (!data) {
       return res.status(404).json({ message: "Restaurant not found!" });
