@@ -7,7 +7,7 @@ const env = require("dotenv").config().parsed;
 const initializePassport = (app) => {
   app.use(
     session({
-      secret: process.env.SESSION_SECRET,
+      secret: 'your_random_secret_key',
       resave: false,
       saveUninitialized: true,
       cookie: {
