@@ -20,11 +20,11 @@ initializePassport(app);
 
 app.use("/api/restaurants", restraurantRoutes);
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'your_random_secret_key', // You can replace 'your_random_secret_key' with a secure key or use an environment variable.
+  secret: 'your_random_secret_key', // You can replace 'your_random_secret_key' with a secure key or use an environment variable.
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }}));
-
+  // process.env.SESSION_SECRET || 
 app.use("/auth", authRoutes);
 app.use("/api/menus", menuRoutes);
 
